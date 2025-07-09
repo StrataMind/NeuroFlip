@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroFlip - Advanced Memory Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="particles"></div>
+    <div class="game-wrapper">
+        <header class="game-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="https://openmoji.org/data/color/svg/1F9E0.svg" alt="🧠" style="width: 32px; height: 32px;">
+                </div>
+                <h1>NeuroFlip</h1>
+            </div>
+            <div class="difficulty-selector">
+                <button class="diff-btn active" data-level="easy">Easy</button>
+                <button class="diff-btn" data-level="medium">Medium</button>
+                <button class="diff-btn" data-level="hard">Hard</button>
+            </div>
+        </header>
+        
+        <div class="stats-panel">
+            <div class="stat-card">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-info">
+                    <span class="stat-value" id="score">0</span>
+                    <span class="stat-label">Score</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+                <div class="stat-info">
+                    <span class="stat-value" id="timer">00:00</span>
+                    <span class="stat-label">Time</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-info">
+                    <span class="stat-value" id="moves">0</span>
+                    <span class="stat-label">Moves</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🔥</div>
+                <div class="stat-info">
+                    <span class="stat-value" id="streak">0</span>
+                    <span class="stat-label">Streak</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="game-board" id="gameBoard"></div>
+            <div class="game-controls">
+                <button class="control-btn primary" id="restart">
+                    <span class="btn-icon">🔄</span>
+                    New Game
+                </button>
+                <button class="control-btn secondary" id="pause">
+                    <span class="btn-icon">⏸️</span>
+                    Pause
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="gameModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">🎉 Congratulations!</h2>
+            </div>
+            <div class="modal-body">
+                <div class="achievement-stats" id="modalStats"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="control-btn primary" id="playAgain">Play Again</button>
+                <button class="control-btn secondary" id="closeModal">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
